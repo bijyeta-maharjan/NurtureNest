@@ -1,28 +1,35 @@
-NurtureNest: Intelligent Voice Assistant for New Parents
-🏆 Winner of the "Next-Gen LLM Challenge" at Hack MIT
+# NurtureNest - AI-Powered Parenting Assistant
 
-NurtureNest is an AI-powered voice assistant designed to support new and expecting parents by providing real-time childcare guidance. Integrated with a cry detection system, it recognizes different types of baby cries and offers tailored soothing suggestions. If crying persists, NurtureNest engages parents with targeted questions to better understand the baby's discomfort and provide more precise advice.
+🏆 **1st Place Winner @ HackMIT [NextGen LLM Challenge] | Sept 2024**
 
-✨ Features
-Real-Time Cry Detection – Classifies baby cries and suggests appropriate soothing techniques.
+NurtureNest is an intelligent voice assistant that helps new parents by analyzing baby cries in real-time and providing AI-generated care recommendations.
 
-Interactive Guidance – Engages with parents through follow-up questions if initial advice doesn’t resolve the crying.
+## 🌟 Features
 
-Voice Assistant – Provides hands-free support for busy parents.
+- 🎤 **Real-Time Cry Recognition** - 82% accurate detection
+- 🗣️ **Voice-Powered Assistance** - Natural voice interaction
+- 🧠 **Smart Parenting Advice** - Tailored soothing techniques
+- 🌐 **User-Friendly Web App** - Simple, intuitive interface
 
-MVP Web App – A user-friendly interface for seamless interaction.
+## 🛠️ Tech Stack
 
-🚀 Objectives
-✅ Develop an intelligent voice assistant for real-time childcare support.
-✅ Classify baby cries and generate tailored advice.
-✅ Build a functional MVP web app for easy interaction.
+### Core Technologies
+<p align="center">
+  <img src="https://img.shields.io/badge/OpenAI_Whisper-000000?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI Whisper">
+  <img src="https://img.shields.io/badge/Llama_3-FF6600?style=for-the-badge&logo=meta&logoColor=white" alt="Llama 3">
+  <img src="https://img.shields.io/badge/Hugging_Face-FFD43B?style=for-the-badge&logo=huggingface&logoColor=black" alt="Hugging Face">
+  <img src="https://img.shields.io/badge/Google_TTS-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google TTS">
+  <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit">
+</p>
 
-🔧 Technologies Used
-AI & NLP – For cry classification and conversational assistance.
+| Component          | Technology Used         |
+|--------------------|-------------------------|
+| Speech-to-Text    | OpenAI Whisper          |
+| Text-to-Speech    | Google TTS API          |
+| Cry Classification| Hugging Face wav2vec2   |
+| Language Model    | Llama 3 8B Instruct     |
+| Web Interface     | Streamlit               |
+| Deployment        | Tune AI                 |
 
-Web App – Built for intuitive user experience.
-
-Real-Time Processing – Ensures quick and accurate responses.
-
-📌 Outcome
-NurtureNest delivers an effective solution for early parenthood challenges, combining AI-powered cry analysis with interactive support to ease parental stress.
+💡 Interested in contributing? Let’s make parenting easier with AI!
+ "Because every cry has a reason—and now, an answer."
