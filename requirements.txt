@@ -1,0 +1,13 @@
+streamlit
+google-generativeai
+python-dotenv
+audio_recorder_streamlit
+python-soundfile
+scipy
+numpy
+gtts
+tempfile
+transformers
+datasets
+faster_whisper
+ffmpeg
