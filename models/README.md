@@ -18,6 +18,6 @@ Label order (alphabetical, from the dataset folder names):
 `0 belly_pain · 1 burping · 2 discomfort · 3 hungry · 4 tired`
 
 ## Parenting-advice LLM
-Llama 3 8B Instruct, fine-tuned on the conversation examples in
-[`training/llm_finetune_data/`](../training/llm_finetune_data/) and hosted on Tune Studio.
+Llama 3 8B Instruct hosted on Tune Studio, guided with few-shot infant-care conversation
+examples in [`training/llm_prompt_examples/`](../training/llm_prompt_examples/).
 The app calls it through the Tune Studio API (`TUNE_MODEL_ID` in `.env`).

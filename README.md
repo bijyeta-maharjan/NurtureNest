@@ -20,7 +20,7 @@ flowchart LR
         A1[🎤 Record cry<br/>7 s, 16 kHz] --> A2[wav2vec2 cry classifier<br/>fine-tuned, 5 classes] --> A3[Predicted reason]
     end
     subgraph B["Get parenting advice"]
-        B1[🎤 Parent asks a question] --> B2[Whisper<br/>speech-to-text] --> B3[Llama 3 8B Instruct<br/>fine-tuned, via Tune Studio] --> B4[Google TTS<br/>spoken answer]
+        B1[🎤 Parent asks a question] --> B2[Whisper<br/>speech-to-text] --> B3[Llama 3 8B Instruct<br/>few-shot prompted, via Tune Studio] --> B4[Google TTS<br/>spoken answer]
     end
 ```
 
@@ -28,9 +28,10 @@ flowchart LR
 the [Donate-a-Cry corpus](data/donateacry/) (105 labelled cry recordings across 5 classes),
 using an 80/20 train/test split.
 
-**2. Parenting advice.** The parent's question is transcribed with `faster-whisper`, sent to a
-Llama 3 8B Instruct model fine-tuned on infant-care conversations
-([training data](training/llm_finetune_data/)), and the answer is spoken back with gTTS.
+**2. Parenting advice.** The parent's question is transcribed with `faster-whisper` and sent to
+Llama 3 8B Instruct on Tune Studio. The model is guided by prompt engineering with few-shot
+infant-care conversation examples ([examples](training/llm_prompt_examples/)), and the answer is
+spoken back with gTTS.
 
 ## Results
 
@@ -52,7 +53,7 @@ Llama 3 8B Instruct model fine-tuned on infant-care conversations
 |---|---|
 | Cry classification | wav2vec2-base (Hugging Face Transformers), fine-tuned |
 | Speech-to-text | faster-whisper (Whisper base) |
-| Language model | Llama 3 8B Instruct, fine-tuned and hosted on Tune Studio |
+| Language model | Llama 3 8B Instruct with few-shot prompting, hosted on Tune Studio |
 | Text-to-speech | gTTS (Google Text-to-Speech) |
 | Web interface | Streamlit |
 
@@ -64,7 +65,7 @@ NurtureNest/
 │   └── app.py                        # Streamlit app (both modes)
 ├── training/
 │   ├── train_cry_classifier.py       # Fine-tunes wav2vec2 on the cry dataset
-│   └── llm_finetune_data/            # Conversation data for the advice LLM
+│   └── llm_prompt_examples/          # Few-shot conversation examples for the advice LLM
 ├── models/
 │   └── cry-classifier/               # Classifier config (weights: see models/README.md)
 ├── data/
@@ -90,9 +91,18 @@ streamlit run app/app.py
 
 The app records from your computer's microphone, so run it locally rather than on a server.
 
+## Team
+
+| Member | Contribution |
+|---|---|
+| **Bijyeta Maharjan** | Audio classification: fine-tuned wav2vec2 on the labelled cry dataset, training and testing (82% test accuracy) |
+| **Janet** | Prompt engineering for the parenting-advice LLM (few-shot prompting) |
+| **Riya** | Prompt engineering for the parenting-advice LLM (few-shot prompting) |
+| **Florida** | Frontend (Streamlit web interface) |
+
 ## Acknowledgements
 
-- **Tune AI** for hosting and deployment support for the fine-tuned LLM via Tune Studio.
+- **Tune AI** for hosting and deployment support for the LLM via Tune Studio.
 - **Dataset:** [Donate-a-Cry corpus](https://github.com/gveres/donateacry-corpus), in the cleaned
   version by Rizal, Jan, Dürlich, and Chen (KTH), licensed under the
   [Open Database License](http://opendatacommons.org/licenses/odbl/1.0/). See
