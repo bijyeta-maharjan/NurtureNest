@@ -1,0 +1,18 @@
+# Secrets
+.env
+
+# Model weights (too large for git; see models/README.md)
+*.safetensors
+*.bin
+*.pt
+
+# Training outputs
+training/checkpoints/
+
+# Python / OS
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+.ipynb_checkpoints/

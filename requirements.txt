@@ -1,13 +1,17 @@
+# App
 streamlit
-google-generativeai
 python-dotenv
-audio_recorder_streamlit
-python-soundfile
-scipy
+requests
 numpy
-gtts
-tempfile
+scipy
+soundfile
+sounddevice
+gTTS
+torch
 transformers
+faster-whisper
+
+# Training the cry classifier (training/train_cry_classifier.py)
 datasets
-faster_whisper
-ffmpeg
+evaluate
+accelerate

@@ -6,7 +6,7 @@ import evaluate
 import numpy as np
 
 # Define the path to your dataset
-dataset_path = "dataset/"  # Replace with your actual dataset path
+dataset_path = "data/donateacry/"  # run from the repository root
 
 # Load dataset using the audiofolder loading script
 dataset = load_dataset("audiofolder", data_dir=dataset_path)
@@ -77,7 +77,7 @@ def compute_metrics(pred):
 
 # Define training arguments optimized for MPS backend and lower memory usage
 training_args = TrainingArguments(
-    output_dir="./results",
+    output_dir="./training/checkpoints",
     evaluation_strategy="epoch",
     learning_rate=2e-5,
     per_device_train_batch_size=4,  # Adjust this based on memory limits
@@ -102,7 +102,7 @@ trainer = Trainer(
 trainer.train()
 
 # Save the fine-tuned model
-model.save_pretrained("./fine-tuned-model")
-processor.save_pretrained("./fine-tuned-model")
+model.save_pretrained("./models/cry-classifier")
+processor.save_pretrained("./models/cry-classifier")
 
 print("Training complete and model saved!")
