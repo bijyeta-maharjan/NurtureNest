@@ -4,7 +4,7 @@
 
 NurtureNest is a voice assistant for new parents. It listens to a baby's cry, predicts the
 likely reason (hungry, tired, needs burping, belly pain, or discomfort), and answers spoken
-parenting questions with brief advice from a fine-tuned LLM, read back aloud.
+parenting questions with brief advice from an LLM, read back aloud.
 
 > *"Because every cry has a reason, and now, an answer."*
 
